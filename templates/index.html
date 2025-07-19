@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Assistente Android</title>
+    <script>
+        let projetoAtivo = "";
+
+        async function salvarProjeto() {
+            const nomeProjeto = document.getElementById("nome_projeto").value.trim();
+            if (!nomeProjeto) {
+                alert("Informe um nome para o novo projeto.");
+                return;
+            }
+
+            const res = await fetch("/salvar", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ nome_projeto: nomeProjeto })
+            });
+
+            const data = await res.json();
+            alert(data.mensagem);
+            await carregarProjetos();
+            document.getElementById("lista_projetos").value = nomeProjeto;
+            projetoAtivo = nomeProjeto;
+        }
+
+        async function gerarApp() {
+            const prompt = document.getElementById("prompt").value.trim();
+            const nomeProjeto = document.getElementById("lista_projetos").value;
+
+            if (!nomeProjeto || !prompt) {
+                alert("Selecione um projeto e preencha a descrição.");
+                return;
+            }
+
+            const res = await fetch("/gerar", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ nome_projeto: nomeProjeto, prompt: prompt })
+            });
+
+            const data = await res.json();
+            alert(data.mensagem);
+        }
+
+        async function carregarProjetos() {
+            const res = await fetch("/projetos");
+            const projetos = await res.json();
+            const select = document.getElementById("lista_projetos");
+
+            select.innerHTML = "";
+            projetos.forEach(p => {
+                const opt = document.createElement("option");
+                opt.value = p;
+                opt.innerText = p;
+                select.appendChild(opt);
+            });
+
+            if (projetos.length > 0 && !projetoAtivo) {
+                projetoAtivo = projetos[0];
+                select.value = projetoAtivo;
+            }
+        }
+
+        window.onload = carregarProjetos;
+    </script>
+</head>
+<body>
+    <h2>Assistente Android</h2>
+
+    <label><strong>Novo projeto:</strong></label>
+    <input type="text" id="nome_projeto">
+    <button onclick="salvarProjeto()">Salvar</button>
+
+    <br><br>
+    <label><strong>Projetos salvos:</strong></label>
+    <select id="lista_projetos"></select>
+
+    <br><br>
+    <label><strong>Descrição do App:</strong></label><br>
+    <textarea id="prompt" rows="4" cols="50" placeholder="Escreva o que deseja gerar..."></textarea>
+
+    <br><br>
+    <button onclick="gerarApp()">🚀 Gerar App</button>
+
+    <br><br>
+    <a href="/apk-download" target="_blank">⬇️ Baixar APK</a>
+
+    <br><br>
+    <a href="/logs" target="_blank">📜 Ver Logs</a>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/layoutPrincipal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- LOGO -->
+        <ImageView
+            android:id="@+id/imageViewLogo"
+            android:layout_width="70dp"
+            android:layout_height="71dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="Logo"
+            android:src="@drawable/logo_transparente" />
+
+        <!-- Botão Ver Mais -->
+        <TextView
+            android:id="@+id/btnVerMais"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/circle_border"
+            android:gravity="center"
+            android:text="Ver +"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <!-- Botão Ver Menos -->
+        <TextView
+            android:id="@+id/btnVerMenos"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="end"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/circle_border"
+            android:gravity="center"
+            android:text="Ver -"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:visibility="gone"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <!-- Nome do Cliente -->
+        <EditText
+            android:id="@+id/edtNomeCliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nome do Cliente"
+            android:inputType="textPersonName"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Layout dos campos ocultos -->
+        <LinearLayout
+            android:id="@+id/layoutCamposOcultos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/edtEndereco"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Endereço"
+                android:inputType="textPostalAddress"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/edtQtdChaves"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Quantidade de Chaves Recebidas"
+                android:inputType="number"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Medidores -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginBottom="8dp">
+
+                <EditText
+                    android:id="@+id/edtMedidorEnergia"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Medidor Energia"
+                    android:inputType="text" />
+
+                <EditText
+                    android:id="@+id/edtMedidorAgua"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:hint="Medidor Água"
+                    android:inputType="text"
+                    android:layout_marginStart="8dp" />
+
+            </LinearLayout>
+
+            <!-- Substitua o Spinner por EditText -->
+            <EditText
+                android:id="@+id/editMetodologia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Digite a metodologia"
+                android:inputType="text"
+                android:background="@android:drawable/editbox_background"
+                android:padding="8dp" />
+
+            <Spinner
+                android:id="@+id/spinnerTipo"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/spinner_border_rounded" />
+
+        </LinearLayout>
+
+        <!-- RecyclerView Ambientes -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewAmbientes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginBottom="16dp"
+            tools:listitem="@layout/item_ambiente" />
+
+        <!-- Botões -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginBottom="8dp">
+
+            <Button
+                android:id="@+id/btnNovaVistoria"
+                style="@style/ButtonPastelBlue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="NOVA VISTORIA3" />
+
+            <Button
+                android:id="@+id/btnHistorico"
+                style="@style/ButtonPastelBlue"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="HISTÓRICO" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnConfiguracoes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/button_configuracoes"
+            android:text="CONFIGURAÇÕES"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="12dp" />
+
+        <Button
+            android:id="@+id/btnFinalizar"
+            android:layout_width="375dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_finalizar"
+            android:gravity="center"
+            android:padding="12dp"
+            android:text="FINALIZAR VISTORIA3"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</ScrollView>

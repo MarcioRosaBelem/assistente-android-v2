@@ -1,0 +1,21 @@
+# Arquivos de build
+/build/
+app/build/
+.gradle/
+*.iml
+
+# Configurações locais
+local.properties
+
+# Pastas da IDE
+.idea/
+
+# SDK local (não versionar nunca)
+android-sdk/
+
+# Arquivos temporários e de sistema
+.DS_Store
+captures/
+*.zip
+*.txt
+logs/

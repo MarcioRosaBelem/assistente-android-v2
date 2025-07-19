@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/buttonsContainer"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Seção original de fotos e descrição -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:id="@+id/textTitulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ambiente"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+
+                <ImageButton
+                    android:id="@+id/btnAdicionarFotos"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_toLeftOf="@id/btnLixeira"
+                    android:layout_marginEnd="8dp"
+                    android:src="@android:drawable/ic_menu_camera"
+                    android:contentDescription="Adicionar fotos"
+                    android:background="?attr/selectableItemBackgroundBorderless"/>
+
+                <ImageButton
+                    android:id="@+id/btnLixeira"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:src="@android:drawable/ic_menu_delete"
+                    android:contentDescription="Modo seleção"
+                    android:background="?attr/selectableItemBackgroundBorderless"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/selectionButtonsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:visibility="gone"
+                android:layout_marginBottom="8dp">
+
+                <Button
+                    android:id="@+id/botaoCancelarSelecao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cancelar"
+                    android:layout_marginEnd="8dp"
+                    android:backgroundTint="@color/colorPrimary"/>
+
+                <Button
+                    android:id="@+id/botaoExcluirSelecionadas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Excluir selecionadas"
+                    android:backgroundTint="@color/colorAccent"/>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewFotos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="4dp"/>
+
+            <!-- Formulário incorporado (inicialmente oculto) -->
+            <LinearLayout
+                android:id="@+id/formularioContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:paddingTop="16dp">
+
+                <!-- Copie todo o conteúdo do formulario_ambiente.xml aqui -->
+                <TextView
+                    android:id="@+id/formulario_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Formulário de Vistoria de Ambiente"
+                    android:textSize="24sp"
+                    android:textColor="#2E7D32"
+                    android:gravity="center"
+                    android:layout_marginBottom="20dp" />
+
+                <!-- Seção 1: Ambiente -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="1. Ambiente"
+                    android:textSize="20sp"
+                    android:textColor="#2E7D32"
+                    android:layout_marginBottom="10dp" />
+
+                <TextView
+                    android:id="@+id/textNomeAmbiente"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ambiente: [Nome do Ambiente]"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="15dp" />
+
+                <!-- Continue com todos os campos do formulário -->
+                <!-- ... -->
+
+                <!-- Botões do formulário -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="16dp">
+
+                    <Button
+                        android:id="@+id/btnCancelarFormulario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cancelar"
+                        android:layout_marginEnd="8dp"
+                        android:backgroundTint="@color/colorPrimary"/>
+
+                    <Button
+                        android:id="@+id/btnSalvarFormulario"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Salvar"
+                        android:backgroundTint="@color/colorAccent"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/buttonsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@android:color/white">
+
+        <EditText
+            android:id="@+id/editDescricao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Observações (opcional)"
+            android:inputType="textMultiLine"
+            android:minLines="3"
+            android:maxLines="5"/>
+
+        <Button
+            android:id="@+id/btnPreencherFormulario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Preencher Formulário"
+            android:layout_marginTop="8dp"/>
+
+        <Button
+            android:id="@+id/botaoSalvar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Salvar"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/colorPrimary"/>
+    </LinearLayout>
+</RelativeLayout>

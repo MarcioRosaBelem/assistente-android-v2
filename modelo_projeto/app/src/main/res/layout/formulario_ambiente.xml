@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/formulario_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Formulário de Vistoria de Ambiente"
+        android:textSize="24sp"
+        android:textColor="#2E7D32"
+        android:gravity="center"
+        android:layout_marginBottom="20dp" />
+
+    <!-- Adicionamos o ID -->
+    <!-- Seção 1: Ambiente -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1. Ambiente"
+        android:textSize="20sp"
+        android:textColor="#2E7D32"
+        android:layout_marginBottom="10dp" />
+
+    <TextView
+        android:id="@+id/textNomeAmbiente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ambiente: [Nome do Ambiente]"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="15dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Porta/Portão - Tipo, Cor e Estado:"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp" />
+
+    <EditText
+        android:id="@+id/portaPortao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:padding="8dp"
+        android:minLines="2"
+        android:gravity="top"
+        android:background="@drawable/edit_text_border"
+        android:hint="Descreva aqui..." />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Janela - Tipo, Cor e Estado:"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp" />
+
+    <EditText
+        android:id="@+id/janela"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:padding="8dp"
+        android:minLines="2"
+        android:gravity="top"
+        android:background="@drawable/edit_text_border"
+        android:hint="Descreva aqui..." />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Parede - Tipo, Cor e Estado:"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp" />
+
+    <EditText
+        android:id="@+id/parede"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:padding="8dp"
+        android:minLines="2"
+        android:gravity="top"
+        android:background="@drawable/edit_text_border"
+        android:hint="Descreva aqui..." />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Piso - Tipo, Cor e Estado:"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp" />
+
+    <EditText
+        android:id="@+id/piso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:padding="8dp"
+        android:minLines="2"
+        android:gravity="top"
+        android:background="@drawable/edit_text_border"
+        android:hint="Descreva aqui..." />
+
+    <LinearLayout
+        android:id="@+id/elementosExtrasContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp" />
+
+    <Button
+        android:id="@+id/btnAdicionarElemento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="+ Adicionar novo item do ambiente"
+        android:backgroundTint="@color/azul_claro"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2. Acessórios"
+        android:textSize="20sp"
+        android:textColor="#2E7D32"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="10dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Acessório 1 - Tipo, Cor e Estado (Tomada, Lâmpada):"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp" />
+
+    <EditText
+        android:id="@+id/acessorio1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:padding="8dp"
+        android:minLines="2"
+        android:gravity="top"
+        android:background="@drawable/edit_text_border"
+        android:hint="Descreva aqui..." />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Acessório 2 - Tipo, Cor e Estado (Pia, Torneira, Chuveiro, Registro):"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp" />
+
+    <EditText
+        android:id="@+id/acessorio2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:padding="8dp"
+        android:minLines="2"
+        android:gravity="top"
+        android:background="@drawable/edit_text_border"
+        android:hint="Descreva aqui..." />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Aessório 3 - Tipo, Cor e Estado (Vaso Sanitário, Box, Ducha):"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp" />
+
+    <EditText
+        android:id="@+id/acessorio3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:padding="8dp"
+        android:minLines="2"
+        android:gravity="top"
+        android:background="@drawable/edit_text_border"
+        android:hint="Descreva aqui..." />
+
+    <LinearLayout
+        android:id="@+id/acessoriosExtrasContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp" />
+
+    <Button
+        android:id="@+id/btnAdicionarAcessorio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="+ Adicionar novo acessório"
+        android:backgroundTint="@color/azul_claro"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+</LinearLayout>

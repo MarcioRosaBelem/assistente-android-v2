@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Visualização da câmera -->
+    <androidx.camera.view.PreviewView
+        android:id="@+id/previewView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Botões sobrepostos -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:padding="16dp"
+        android:layout_marginBottom="24dp">
+
+        <ImageButton
+            android:id="@+id/btnCancelar"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@drawable/bg_round_button"
+            android:src="@android:drawable/ic_delete"
+            android:contentDescription="Cancelar" />
+
+        <ImageButton
+            android:id="@+id/btnCapturar"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/bg_round_button"
+            android:src="@android:drawable/ic_menu_camera"
+            android:contentDescription="Capturar" />
+
+        <ImageButton
+            android:id="@+id/btnConfirmar"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@drawable/bg_round_button"
+            android:src="@android:drawable/ic_menu_save"
+            android:contentDescription="Salvar" />
+    </LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/custom_toast_container"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/button_historico"
+    android:padding="16dp"
+    android:orientation="horizontal"
+    android:gravity="center"> <!-- Fechamos o elemento com > aqui -->
+
+    <!-- Mesma cor do botão Preencher Formulário -->
+    <TextView
+        android:id="@+id/custom_toast_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+</LinearLayout> <!-- Adicionamos a tag de fechamento -->

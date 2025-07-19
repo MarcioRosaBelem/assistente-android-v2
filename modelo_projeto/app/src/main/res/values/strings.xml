@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">VistoriAppAndroid</string>
+    <string name="max_fotos_atingido">Máximo de %d fotos atingido</string>
+    <string name="fotos_format">Fotos: %d</string>
+</resources>
